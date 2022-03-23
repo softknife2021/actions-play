@@ -43,7 +43,5 @@ jobs:
       name: dev
       url: https://test.com
     steps:
-      - name: execute groovy sample script
-        run: groovy .github/workflows/scripts/sample.groovy
       - name: Deploy
         run: echo "Deploying to dev $env.name"
