@@ -31,9 +31,14 @@ jobs:
         run: sudo apt-get install groovy
       - name: execute groovy sample script
         run: groovy .github/workflows/scripts/sample.groovy
-  deploy:
+  deployDev:
+    name: Deploy to Dev
+    if: github.event.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: https://test.com
     steps:
       - name: Deploy
-        run: echo "Deploying Action $PUBLICENV runId $GITHUB_RUN_ID"
+        run: echo "Deploying to dev $env.name"
