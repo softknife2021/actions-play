@@ -1,5 +1,14 @@
 name: Deploy to dev on Merge to Main branch
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   deployDev:
     name: Deploy to Dev
