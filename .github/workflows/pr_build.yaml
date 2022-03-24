@@ -39,7 +39,7 @@ jobs:
         run: echo "Running db migration"
   integration_test:
     #needs to checkout the the test repo and trigger proper test group
-    needs: db_migration
+    needs: build
     runs-on: ubuntu-latest
     steps:
       # - uses: actions/checkout@v2
