@@ -1,12 +1,5 @@
 name: Deploy to dev on Merge to Main branch
 
-on:
-  pull_request:
-    types:
-    - closed
-    branches:
-    - main
-
 jobs:
   build:
       runs-on: ubuntu-latest
