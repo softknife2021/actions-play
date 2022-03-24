@@ -23,14 +23,14 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-      # - name: Test with Gradle
-      #   run: ./gradlew clean build
-      # - name: update ubuntu
-      #   run: sudo apt-get update
-      # - name: install groovy
-      #   run: sudo apt-get install groovy
-      # - name: execute groovy sample script
-      #   run: groovy .github/workflows/scripts/sample.groovy
+      - name: Test with Gradle
+        run: ./gradlew clean build
+      - name: update ubuntu
+        run: sudo apt-get update
+      - name: install groovy
+        run: sudo apt-get install groovy
+      - name: execute groovy sample script
+        run: groovy .github/workflows/scripts/sample.groovy
       - name: build
         run: echo "Building project"
 
