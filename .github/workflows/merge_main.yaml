@@ -1,16 +1,38 @@
 name: Deploy to dev on Merge to Main branch
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    types:
+    - closed
     branches:
-      - main
-  workflow_dispatch:
+    - main
 
 jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        # - uses: actions/checkout@v2
+        # - name: Set up JDK 11
+        #   uses: actions/setup-java@v2
+        #   with:
+        #     java-version: 11
+        #     distribution: 'adopt'
+        # - name: Build with Gradle
+        #   run: ./gradlew clean build
+        # - name: update ubuntu
+        #   run: sudo apt-get update
+        # - name: install groovy
+        #   run: sudo apt-get install groovy
+        # - name: execute groovy sample script
+        #   run: groovy .github/workflows/scripts/sample.groovy
+        - name: build
+          run: echo "Building project on main branch"
+        - name: unit_test
+          run: echo "Running unit tests"
+        - name: whatever_steps
+          run: echo "Running whatever_steps"
   deployDev:
+    needs: build
     name: Deploy to Dev
     if: github.event.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
