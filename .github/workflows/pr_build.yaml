@@ -16,7 +16,7 @@ jobs:
     - name: display info
     - run: |
         echo "Sleeping"
-        sleep 15
+        sleep 60
     - name: display info
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
