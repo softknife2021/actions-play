@@ -13,6 +13,11 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
+    - name: display info
+    - run: |
+        echo "Sleeping"
+        sleep 15
+    - name: display info
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
         echo "Tags: ${{ github.event.inputs.tags }}" 
