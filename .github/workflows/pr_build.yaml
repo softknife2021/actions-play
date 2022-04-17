@@ -1,14 +1,21 @@
 name: Build CarIQ MonoRepo
 
-on: 
+on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+      target-env:
+        type: choice
+        description: Pick your target env
+        options:
+          - test
+          - statging
+      test-group:
+        type: choice
+        description: Who to greet
+        options:
+          - smoke
+          - functional
+          - security
 jobs:
   printInputs:
     runs-on: ubuntu-latest
