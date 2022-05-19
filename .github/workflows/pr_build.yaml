@@ -16,6 +16,9 @@ on:
           - smoke
           - functional
           - security
+      id:
+        description: 'run identifier'
+        required: false
 jobs:
   greet:
     runs-on: ubuntu-latest
